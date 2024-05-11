@@ -2,9 +2,9 @@ import { React, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { ThemeProvider } from '@emotion/react';
-import { Box, Stack, createTheme } from '@mui/material';
+import { Stack, createTheme } from '@mui/material';
 
-import NavBar from '../NavBar';
+import NavBar from './NavBar';
 import { Movies, MovieInfo, Actors, Profile } from './index';
 import SideBar from './SideBar';
 import Content from './Content';

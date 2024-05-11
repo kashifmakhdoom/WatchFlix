@@ -14,7 +14,6 @@ import {
   Typography,
   CircularProgress,
 } from '@mui/material';
-import { Home, NearMeDisabledOutlined } from '@mui/icons-material';
 
 import icons from '../assets/icons';
 
@@ -28,7 +27,7 @@ const categories = [
 ];
 
 const SideBar = () => {
-  const { genreOrCategoryName } = useSelector(
+  const { genreIdOrCategoryName } = useSelector(
     (state) => state.currentGenreOrCategory
   );
   const { data, error, isLoading } = useGetGenresQuery();
@@ -36,7 +35,6 @@ const SideBar = () => {
 
   // log -> genres
   //console.log(data);
-  console.log(genreOrCategoryName);
 
   return (
     <Box

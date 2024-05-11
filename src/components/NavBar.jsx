@@ -1,41 +1,25 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+
+import { Pets, Key, Person, ManageAccounts, Logout } from '@mui/icons-material';
 
 import {
-  Pets,
-  Mail,
-  Notifications,
-  Key,
-  Person,
-  ManageAccounts,
-  Logout,
-} from '@mui/icons-material';
-
-import {
+  Box,
   styled,
   AppBar,
   Toolbar,
   Typography,
-  InputBase,
-  Badge,
   Avatar,
   Menu,
   MenuItem,
   IconButton,
 } from '@mui/material';
-import React from 'react';
-import Box from '@mui/material/Box';
+
+import SearchBox from './SearchBox';
 
 const StyledToolbar = styled(Toolbar)({
   display: 'flex',
   justifyContent: 'space-between',
 });
-
-const Search = styled('div')(({ theme }) => ({
-  background: 'white',
-  padding: '0 10px',
-  borderRadius: theme.shape.borderRadius,
-  width: '40%',
-}));
 
 const Icons = styled(Box)(({ theme }) => ({
   display: 'none',
@@ -67,12 +51,7 @@ const NavBar = () => {
           MovieFlix
         </Typography>*/}
         <Pets sx={{ display: { xs: 'block', sm: 'none' } }} />
-        <Search>
-          <InputBase
-            placeholder='search...'
-            sx={{ color: 'gray', width: '100%' }}
-          />
-        </Search>
+        <SearchBox placeholder='search...' />
 
         {!isAuthenticated ? (
           <IconButton aria-label='login' color='inherit' onClick={() => {}}>
@@ -81,12 +60,12 @@ const NavBar = () => {
         ) : (
           <>
             <Icons>
-              <Badge badgeContent={4} color='error'>
+              {/* <Badge badgeContent={4} color='error'>
                 <Mail />
               </Badge>
               <Badge badgeContent={3} color='error'>
                 <Notifications />
-              </Badge>
+              </Badge> */}
               <Avatar
                 sx={{ width: 35, height: 35 }}
                 onClick={(e) => setOpen(true)}

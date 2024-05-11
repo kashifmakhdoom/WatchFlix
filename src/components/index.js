@@ -4,3 +4,6 @@ export { default as Movie } from './Movies/Movie';
 export { default as MovieInfo } from './Movies/MovieInfo';
 export { default as Actors } from './Actors/Actors';
 export { default as Profile } from './Profiles/Profile';
+
+// Layout
+export { default as SearchBox } from './SearchBox';

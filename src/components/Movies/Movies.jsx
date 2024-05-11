@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
+
+import { useGetMoviesQuery } from '../../services/TMDB';
+import { MovieList } from '..';
+
 import {
   Box,
   CircularProgress,
@@ -7,11 +12,16 @@ import {
   useMediaQuery,
 } from '@mui/material';
 
-import { useGetMoviesQuery } from '../../services/TMDB';
-import { MovieList } from '..';
-
 const Movies = () => {
-  const { data, error, isLoading } = useGetMoviesQuery();
+  const [page, setPage] = useState(1);
+  const { genreIdOrCategoryName, searchQuery } = useSelector(
+    (state) => state.currentGenreOrCategory
+  );
+  const { data, error, isLoading } = useGetMoviesQuery({
+    genreIdOrCategoryName,
+    searchQuery,
+    page,
+  });
 
   if (isLoading) {
     return (
