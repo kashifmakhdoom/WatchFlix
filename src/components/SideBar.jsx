@@ -59,7 +59,7 @@ const SideBar = () => {
           {categories.map(({ label, value }) => (
             <Link
               key={value}
-              to='/'
+              to={'/'}
               sx={{
                 textDecoration: 'none',
                 color: 'black',
@@ -69,7 +69,7 @@ const SideBar = () => {
                 <ListItemButton
                   onClick={() => dispatch(selectGenreOrCategory(value))}
                 >
-                  <ListItemIcon>
+                  <ListItemIcon to={`/`}>
                     <img
                       src={icons[label.toLowerCase()]}
                       alt={label}
@@ -95,7 +95,7 @@ const SideBar = () => {
             data.genres.map(({ id, name }) => (
               <Link
                 key={id}
-                to='/'
+                to={'/'}
                 sx={{
                   textDecoration: 'none',
                   color: 'black',

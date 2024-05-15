@@ -17,12 +17,16 @@ const StyledSearch = styled('div')(({ theme }) => ({
 const SearchBox = ({ placeholder }) => {
   const [query, setQuery] = useState('');
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       dispatch(searchMovie(query));
     }
   };
+
+  // do not show search box other than main movies page
+  if(location.pathname !== '/') return null;
 
   return (
     <div>

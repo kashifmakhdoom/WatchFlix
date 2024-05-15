@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 
 import { useGetMoviesQuery } from '../../services/TMDB';
 import { MovieList } from '..';
 
-import {
-  Box,
-  CircularProgress,
-  Typography,
-  useMediaQuery,
-} from '@mui/material';
+import { Box, CircularProgress, Typography, Pagination } from '@mui/material';
 
 const Movies = () => {
   const [page, setPage] = useState(1);
@@ -45,12 +39,26 @@ const Movies = () => {
 
   if (error) return 'An error has occured.';
 
-  // log -> movies
-  //console.log(data);
-
   return (
     <div>
       <MovieList movies={data} />
+      <Box display={'flex'} justifyContent={'center'} mt={5}>
+        <Pagination
+          color='secondary'
+          variant='outlined'
+          shape='rounded'
+          sx={{ alignItems: 'center' }}
+          defaultPage={1}
+          page={page}
+          count={data?.total_pages}
+          onChange={(e, value) => setPage(value)}
+        />
+        {/* <Pagination
+        currentPage={page}
+        setPage={setPage}
+        totalPages={data?.total_pages}
+      /> */}
+      </Box>
     </div>
   );
 };

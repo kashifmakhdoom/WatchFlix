@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Typography, Grid, Grow, Tooltip, Rating, styled } from '@mui/material';
+import { Typography, Grid, Grow, Tooltip, Rating } from '@mui/material';
 
 const Movie = ({ movie, index }) => {
   return (
@@ -28,7 +28,7 @@ const Movie = ({ movie, index }) => {
               src={
                 movie.poster_path
                   ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-                  : `https://fillmurray.com/200/300`
+                  : `https://www.csaff.org/wp-content/uploads/csaff-no-poster.jpg`
               }
             />
           </Link>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from '@mui/material';
 import { Movie } from '..';
 
-const MovieList = ({ movies }) => {
+const MovieList = ({ movies, count }) => {
   return (
     <Grid
       rowSpacing={2}
@@ -18,9 +18,12 @@ const MovieList = ({ movies }) => {
         padding: 0,
       }}
     >
-      {movies.results.map((movie, index) => (
+      {movies.results?.map((movie, index) => (
         <Movie movie={movie} key={index} index={index} />
       ))}
+      {/* {movies.results.slice(0, count).map((movie, index) => (
+        <Movie movie={movie} key={index} index={index} />
+      ))} */}
     </Grid>
   );
 };
