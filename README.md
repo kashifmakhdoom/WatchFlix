@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/kashifmakhdoom/WatchFlix">
-    <img src="https://github.com/kashifmakhdoom/WatchFlix/blob/main/src/assets/logos/logo-white.png" alt="WatchFlix" width="252" height="85">
+    <img src="https://github.com/kashifmakhdoom/WatchFlix/blob/main/src/assets/logos/logo-red.png" alt="WatchFlix" width="252" height="85">
   </a>
 
   <h2 align="center">WatchFlix - Kashif Makhdoom</h2>
@@ -51,7 +51,7 @@
 
 ## About The Project
 
-![WatchFlix](https://github.com/kashifmakhdoom/WatchFlix/assets/74956642/f25a52ec-e856-4eaf-9ca0-e2646c697cd6)
+![WatchFlix](https://github.com/kashifmakhdoom/WatchFlix/blob/main/src/assets/images/WatchFlix-Dark.png)
 
 WatchFlix combines the desire to unleash powerful creativity with the industry's most advanced JavaScript tools including React.js, Redux via RTK, Material UI, Alan AI, and more.
 
