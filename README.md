@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/kashifmakhdoom/WatchFlix">
-    <img src="src/assets/images/logo-white.png" alt="WatchFlix" width="252" height="85">
+    <img src="https://github.com/kashifmakhdoom/WatchFlix/blob/main/src/assets/logos/logo-white.png" alt="WatchFlix" width="252" height="85">
   </a>
 
   <h2 align="center">WatchFlix - Kashif Makhdoom</h2>
