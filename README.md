@@ -54,7 +54,8 @@
 Project Screenshots:
 
 ![WatchFlix](https://github.com/kashifmakhdoom/WatchFlix/blob/main/src/assets/images/WatchFlix-Dark.png)
-(https://github.com/kashifmakhdoom/WatchFlix/blob/main/src/assets/images/WatchFlix-Light.png)
+
+![WatchFlix](https://github.com/kashifmakhdoom/WatchFlix/blob/main/src/assets/images/WatchFlix-Light.png)
 
 WatchFlix combines the desire to unleash powerful creativity with the industry's most advanced JavaScript tools including React.js, Redux via RTK, Material UI, Alan AI, and more.
 
