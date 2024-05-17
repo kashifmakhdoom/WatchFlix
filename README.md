@@ -51,7 +51,10 @@
 
 ## About The Project
 
+Project Screenshots:
+
 ![WatchFlix](https://github.com/kashifmakhdoom/WatchFlix/blob/main/src/assets/images/WatchFlix-Dark.png)
+(https://github.com/kashifmakhdoom/WatchFlix/blob/main/src/assets/images/WatchFlix-Light.png)
 
 WatchFlix combines the desire to unleash powerful creativity with the industry's most advanced JavaScript tools including React.js, Redux via RTK, Material UI, Alan AI, and more.
 
@@ -66,6 +69,13 @@ Features include:
 - Alan AI Voice functionality more...
 
 Alan works as an in-app voice assistant for the WatchFlix project.
+
+Upcoming Features / Fixes:
+
+- Feature movie carousel - shows top 5 featured movies at the top
+- Further components breakdown abiding SRP
+- Mobile / Tablet responsiveness
+- Anything further: improvements, error fixing, code refactoring, etc.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -88,7 +98,7 @@ List of things you need to use and how to install them:
 
 Setup:
 
-1. Get a free TMDB API Key at [https://www.themoviedb.org/](https://www.themoviedb.org/).
+1. Get a free TMDB API Key at [https://www.themoviedb.org/](https://www.themoviedb.org/)
 2. Clone the repo:
    ```sh
    git clone https://github.com/kashifmakhdoom/WatchFlix.git
@@ -116,6 +126,16 @@ For a full demonstration of all the functionalities of this phenomenal web appli
 _For more detailes regarding TMDB API calls, please refer to the [Documentation](https://developers.themoviedb.org/3/getting-started/introduction)._
 
 See the [open issues](https://github.com/kashifmakhdoom/WatchFlix/issues) for a full list of proposed features (and known issues).
+
+Alan Voice Queries:
+
+1. "What does this app do?" | "What do I do here?" | "What is this app is all about?"
+2. "Go to [GENRE]" | "Search for [QUERY]"
+3. "It's Halloween" | "I want to get scared" - (for horror movies)
+4. "Surprise me!" | "Suggest me some good movies" - (for random movie category search)
+5. "Give me something funny" | "I want to laugh" | "I am upset" - (for comedy movies)
+6. "Make it dark" | "Make it light" - (for theme mode change)
+7. "Login / Signin" | "Logout / Signout" - (for login and logout)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -165,10 +185,7 @@ Used resources:
 - [The Movie DB API Documentation](https://developers.themoviedb.org/3/getting-started/introduction)
 - [Alan AI Documentation](https://alan.app/docs/)
 - [MUI Library](https://mui.com/)
-- [JavaScript Mastery](https://www.jsmastery.pro/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
-
-[product-screenshot]: src/assets/images/WatchFlix-Dark.PNG
