@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Typography, Grid, Grow, Tooltip, Rating } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 const Movie = ({ movie, index }) => {
+  const theme = useTheme();
   return (
     <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
       <Grow in key={index} timeout={(index + 1) * 250}>
@@ -32,7 +34,13 @@ const Movie = ({ movie, index }) => {
               }
             />
           </Link>
-          <Typography variant={'h6'} sx={{ fontWeight: '400' }}>
+          <Typography
+            variant={'h6'}
+            sx={{
+              fontWeight: '400',
+              color: theme.palette.mode === 'dark' ? '#FFF' : '',
+            }}
+          >
             {movie.title}
           </Typography>
           <Tooltip

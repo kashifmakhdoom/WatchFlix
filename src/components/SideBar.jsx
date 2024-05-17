@@ -15,6 +15,8 @@ import {
   CircularProgress,
 } from '@mui/material';
 
+import { useTheme } from '@mui/material/styles';
+
 import icons from '../assets/icons';
 
 import { useGetGenresQuery } from '../services/TMDB';
@@ -27,21 +29,21 @@ const categories = [
 ];
 
 const SideBar = () => {
+  const theme = useTheme();
+
   const { genreIdOrCategoryName } = useSelector(
     (state) => state.currentGenreOrCategory
   );
   const { data, error, isLoading } = useGetGenresQuery();
   const dispatch = useDispatch();
 
-  // log -> genres
-  //console.log(data);
-
   return (
     <Box
       flex={1}
       p={2}
       sx={{
-        backgroundColor: 'lightblue',
+        backgroundColor:
+          theme.palette.mode === 'dark' ? '#757575' : 'lightblue',
         display: { xs: 'none', sm: 'block' },
       }}
     >
@@ -53,7 +55,12 @@ const SideBar = () => {
         }}
       >
         <List>
-          <ListSubheader sx={{ backgroundColor: 'inherit' }}>
+          <ListSubheader
+            sx={{
+              backgroundColor: 'inherit',
+              color: theme.palette.mode === 'dark' ? '#FFF' : '',
+            }}
+          >
             <Typography variant='h6'>Categories</Typography>
           </ListSubheader>
           {categories.map(({ label, value }) => (
@@ -62,7 +69,7 @@ const SideBar = () => {
               to={'/'}
               sx={{
                 textDecoration: 'none',
-                color: 'black',
+                color: theme.palette.mode === 'dark' ? '#FFF' : 'black',
               }}
             >
               <ListItem disablePadding>
@@ -74,6 +81,10 @@ const SideBar = () => {
                       src={icons[label.toLowerCase()]}
                       alt={label}
                       height='27'
+                      style={{
+                        filter:
+                          theme.palette.mode === 'dark' ? 'invert(1)' : '',
+                      }}
                     />
                   </ListItemIcon>
                   <ListItemText primary={label} />
@@ -84,7 +95,12 @@ const SideBar = () => {
         </List>
         <Divider />
         <List>
-          <ListSubheader sx={{ backgroundColor: 'inherit' }}>
+          <ListSubheader
+            sx={{
+              backgroundColor: 'inherit',
+              color: theme.palette.mode === 'dark' ? '#FFF' : '',
+            }}
+          >
             <Typography variant='h6'>Genres</Typography>
           </ListSubheader>
           {isLoading ? (
@@ -98,7 +114,7 @@ const SideBar = () => {
                 to={'/'}
                 sx={{
                   textDecoration: 'none',
-                  color: 'black',
+                  color: theme.palette.mode === 'dark' ? '#FFF' : 'black',
                 }}
               >
                 <ListItem disablePadding>
@@ -110,6 +126,10 @@ const SideBar = () => {
                         src={icons[name.toLowerCase()]}
                         alt={name}
                         height='27'
+                        style={{
+                          filter:
+                            theme.palette.mode === 'dark' ? 'invert(1)' : '',
+                        }}
                       />
                     </ListItemIcon>
                     <ListItemText primary={name} />

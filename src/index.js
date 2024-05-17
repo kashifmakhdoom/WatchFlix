@@ -5,14 +5,17 @@ import { Provider } from 'react-redux';
 
 import App from './components/App';
 import store from './app/store';
+import ToggleThemeMode from './utils/ToggleThemeMode';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <ToggleThemeMode>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ToggleThemeMode>
     </Provider>
   </React.StrictMode>
 );

@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+// Core
+import React, { useEffect, useState, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-
-import { Pets, Key, Person, Logout, Slideshow } from '@mui/icons-material';
+// MUI
+import { useTheme } from '@mui/material/styles';
+import { Key, Person, Logout, Slideshow } from '@mui/icons-material';
 import {
   Box,
   styled,
@@ -17,12 +19,16 @@ import {
   FormControlLabel,
 } from '@mui/material';
 
+import { ThemeModeContext } from '../utils/ToggleThemeMode';
+
+// Layout
 import SearchBox from './SearchBox';
 
 import { fetchToken, createSessionId, moviesApi } from '../utils';
 import { setUser, userSelector } from '../features/auth';
 
-import logo from '../assets/logos/logo-white.png';
+import logo_white from '../assets/logos/logo-white.png';
+import logo_red from '../assets/logos/logo-red.png';
 
 const StyledSwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -95,10 +101,15 @@ const UserBox = styled(Box)(({ theme }) => ({
 }));
 
 const NavBar = () => {
+  const theme = useTheme();
+
+  const logo = theme.palette.mode === 'dark' ? logo_red: logo_white;
   const { isAuthenticated, user } = useSelector(userSelector);
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const themeMode = useContext(ThemeModeContext);
 
   const token = localStorage.getItem('request_token');
   const sessionIdFromLocalStorage = localStorage.getItem('session_id');
@@ -157,8 +168,9 @@ const NavBar = () => {
         <SearchBox placeholder='Search movies...' />
         <FormControlLabel
           control={<StyledSwitch sx={{ m: 1 }} />}
-          label='Light'
+          label=''
           justifyContent={'end'}
+          onChange={themeMode.toggleThemeMode}
         />
         {!isAuthenticated ? (
           <IconButton aria-label='login' color='inherit' onClick={fetchToken}>
