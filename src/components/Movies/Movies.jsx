@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useGetMoviesQuery } from '../../services/TMDB';
-import { MovieList } from '..';
+import { FeaturedMovie, MovieList } from '..';
 
 import { Box, CircularProgress, Typography, Pagination } from '@mui/material';
 
@@ -41,6 +41,7 @@ const Movies = () => {
 
   return (
     <div>
+      <FeaturedMovie movie={data.results[0]} />
       <MovieList movies={data} />
       <Box display={'flex'} justifyContent={'center'} mt={5}>
         <Pagination

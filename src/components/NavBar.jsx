@@ -103,7 +103,7 @@ const UserBox = styled(Box)(({ theme }) => ({
 const NavBar = () => {
   const theme = useTheme();
 
-  const logo = theme.palette.mode === 'dark' ? logo_red: logo_white;
+  const logo = theme.palette.mode === 'dark' ? logo_red : logo_white;
   const { isAuthenticated, user } = useSelector(userSelector);
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
@@ -183,11 +183,14 @@ const NavBar = () => {
                 <AccountCircle />
               </IconButton>*/}
               <Avatar
+                src={
+                  user?.avatar?.tmdb?.avatar_path
+                    ? `https://www.themovedb.org/t/p/w64_and_h64_face${user?.avatar?.tmdb?.avatar_path}`
+                    : `https://gravatar.com/avatar/${user?.avatar?.gravatar?.hash}`
+                }
                 sx={{ width: 40, height: 40 }}
                 onClick={(e) => setOpen(true)}
-              >
-                KM
-              </Avatar>
+              />
             </Icons>
             <UserBox onClick={(e) => setOpen(true)}>
               <Avatar sx={{ width: 35, height: 35 }}>KM</Avatar>

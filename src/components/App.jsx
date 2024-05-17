@@ -34,6 +34,7 @@ const App = () => {
           sx={{
             backgroundColor: theme.palette.mode === 'dark' ? '#424242' : '',
             margin: '0 !important',
+            padding: 1,
           }}
         >
           <main style={{ width: '100%' }}>
